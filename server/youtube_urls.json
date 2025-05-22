@@ -1,0 +1,866 @@
+{
+  "url": "https://www.youtube.com/watch?v=W09bIpc_3ms",
+  "title": "Sam & Jony introduce io",
+  "video_id": "W09bIpc_3ms",
+  "channel_url": "https://www.youtube.com/@OpenAI",
+  "transcript": [
+    {
+      "start_time": 3.837,
+      "end_time": 7.007,
+      "duration": 3.17,
+      "text": "I think we have the opportunity here\nto kind of completely reimagine"
+    },
+    {
+      "start_time": 7.09,
+      "end_time": 9.134,
+      "duration": 2.044,
+      "text": "what it means to use a computer."
+    },
+    {
+      "start_time": 14.055,
+      "end_time": 17.1,
+      "duration": 3.045,
+      "text": "Sam is a rare visionary."
+    },
+    {
+      "start_time": 17.809,
+      "end_time": 21.563000000000002,
+      "duration": 3.754,
+      "text": "He shoulders incredible responsibility,"
+    },
+    {
+      "start_time": 21.896,
+      "end_time": 25.9,
+      "duration": 4.004,
+      "text": "but his curiosity, his humility remain"
+    },
+    {
+      "start_time": 26.317,
+      "end_time": 28.028,
+      "duration": 1.711,
+      "text": "utterly inspiring."
+    },
+    {
+      "start_time": 31.156,
+      "end_time": 34.159,
+      "duration": 3.003,
+      "text": "Jony is the deepest thinker"
+    },
+    {
+      "start_time": 34.743,
+      "end_time": 36.411,
+      "duration": 1.668,
+      "text": "of anyone I have ever met."
+    },
+    {
+      "start_time": 36.411,
+      "end_time": 39.789,
+      "duration": 3.378,
+      "text": "What that leads him\nto be able to come up with"
+    },
+    {
+      "start_time": 40.957,
+      "end_time": 42.5,
+      "duration": 1.543,
+      "text": "is unmatched."
+    },
+    {
+      "start_time": 50.925,
+      "end_time": 53.135999999999996,
+      "duration": 2.211,
+      "text": "I moved to America,"
+    },
+    {
+      "start_time": 53.136,
+      "end_time": 56.806000000000004,
+      "duration": 3.67,
+      "text": "drawn by the exhilarating optimism"
+    },
+    {
+      "start_time": 57.223,
+      "end_time": 60.268,
+      "duration": 3.045,
+      "text": "of San Francisco and Silicon Valley."
+    },
+    {
+      "start_time": 61.853,
+      "end_time": 64.105,
+      "duration": 2.252,
+      "text": "We are sitting at the beginning\nof what I believe"
+    },
+    {
+      "start_time": 64.105,
+      "end_time": 67.525,
+      "duration": 3.42,
+      "text": "will be the greatest technological\nrevolution of our lifetimes."
+    },
+    {
+      "start_time": 69.611,
+      "end_time": 72.072,
+      "duration": 2.461,
+      "text": "I have a growing sense"
+    },
+    {
+      "start_time": 72.072,
+      "end_time": 75.492,
+      "duration": 3.42,
+      "text": "that everything I have learned\nover the last 30 years"
+    },
+    {
+      "start_time": 76.993,
+      "end_time": 79.996,
+      "duration": 3.003,
+      "text": "has led me to this place,"
+    },
+    {
+      "start_time": 80.121,
+      "end_time": 82.03999999999999,
+      "duration": 1.919,
+      "text": "and to this moment."
+    },
+    {
+      "start_time": 93.051,
+      "end_time": 93.76,
+      "duration": 0.709,
+      "text": "Morning, Jony."
+    },
+    {
+      "start_time": 93.76,
+      "end_time": 95.17800000000001,
+      "duration": 1.418,
+      "text": "Hey Sam."
+    },
+    {
+      "start_time": 99.14,
+      "end_time": 100.683,
+      "duration": 1.543,
+      "text": "- Good, how are you doing?\n- Good."
+    },
+    {
+      "start_time": 106.648,
+      "end_time": 108.441,
+      "duration": 1.793,
+      "text": "So what is this announcement\nwe're talking about?"
+    },
+    {
+      "start_time": 112.445,
+      "end_time": 115.573,
+      "duration": 3.128,
+      "text": "Two years ago, Jony and I\nstarted talking about what the future"
+    },
+    {
+      "start_time": 115.573,
+      "end_time": 118.993,
+      "duration": 3.42,
+      "text": "of AI and new kinds of computers\nwas going to look like."
+    },
+    {
+      "start_time": 119.619,
+      "end_time": 121.121,
+      "duration": 1.502,
+      "text": "I was running OpenAI."
+    },
+    {
+      "start_time": 121.121,
+      "end_time": 123.33099999999999,
+      "duration": 2.21,
+      "text": "Jony’s running a design firm called LoveFrom"
+    },
+    {
+      "start_time": 123.331,
+      "end_time": 125.959,
+      "duration": 2.628,
+      "text": "that had established itself as really the,"
+    },
+    {
+      "start_time": 126.376,
+      "end_time": 130.797,
+      "duration": 4.421,
+      "text": "I think, densest collection of talent\nthat I've ever heard of in one place"
+    },
+    {
+      "start_time": 130.797,
+      "end_time": 133.133,
+      "duration": 2.336,
+      "text": "and probably has\never existed in the world."
+    },
+    {
+      "start_time": 133.133,
+      "end_time": 137.595,
+      "duration": 4.462,
+      "text": "And it became very quickly apparent to\nboth of us that we needed a third company."
+    },
+    {
+      "start_time": 137.679,
+      "end_time": 143.393,
+      "duration": 5.714,
+      "text": "A year ago, I founded io with Scott Cannon,"
+    },
+    {
+      "start_time": 143.393,
+      "end_time": 146.604,
+      "duration": 3.211,
+      "text": "Evans Hankey and Tang Tan,"
+    },
+    {
+      "start_time": 147.105,
+      "end_time": 150.77499999999998,
+      "duration": 3.67,
+      "text": "who are the most extraordinary engineers."
+    },
+    {
+      "start_time": 150.775,
+      "end_time": 155.738,
+      "duration": 4.963,
+      "text": "They have built a team of remarkable\nsubject matter experts that range from"
+    },
+    {
+      "start_time": 156.406,
+      "end_time": 159.993,
+      "duration": 3.587,
+      "text": "hardware and software\nengineering, physicists, researchers,"
+    },
+    {
+      "start_time": 160.451,
+      "end_time": 163.37099999999998,
+      "duration": 2.92,
+      "text": "product manufacturing experts."
+    },
+    {
+      "start_time": 163.371,
+      "end_time": 166.916,
+      "duration": 3.545,
+      "text": "And so, io is merging with OpenAI."
+    },
+    {
+      "start_time": 167.292,
+      "end_time": 171.04500000000002,
+      "duration": 3.753,
+      "text": "Formed with the mission of figuring out\nhow to create a family of devices"
+    },
+    {
+      "start_time": 171.045,
+      "end_time": 176.21699999999998,
+      "duration": 5.172,
+      "text": "that would let people use AI to create\nall sorts of wonderful things."
+    },
+    {
+      "start_time": 178.803,
+      "end_time": 179.804,
+      "duration": 1.001,
+      "text": "The first one"
+    },
+    {
+      "start_time": 179.804,
+      "end_time": 182.76500000000001,
+      "duration": 2.961,
+      "text": "we've been working on, I think, is"
+    },
+    {
+      "start_time": 184.058,
+      "end_time": 185.435,
+      "duration": 1.377,
+      "text": "has just completely"
+    },
+    {
+      "start_time": 185.435,
+      "end_time": 188.438,
+      "duration": 3.003,
+      "text": "captured our imagination."
+    },
+    {
+      "start_time": 188.563,
+      "end_time": 190.064,
+      "duration": 1.501,
+      "text": "You know, Jony called one day and said,"
+    },
+    {
+      "start_time": 190.064,
+      "end_time": 192.025,
+      "duration": 1.961,
+      "text": "this is the best work\nour team has ever done."
+    },
+    {
+      "start_time": 192.025,
+      "end_time": 195.32,
+      "duration": 3.295,
+      "text": "I mean, Jony did the iPhone,\nJony did the MacBook Pro."
+    },
+    {
+      "start_time": 195.32,
+      "end_time": 199.74099999999999,
+      "duration": 4.421,
+      "text": "I mean, these are, these are like\nthe defining ways people use technology."
+    },
+    {
+      "start_time": 199.782,
+      "end_time": 202.24300000000002,
+      "duration": 2.461,
+      "text": "It's hard to beat those things.\nThose are really wonderful."
+    },
+    {
+      "start_time": 202.243,
+      "end_time": 204.162,
+      "duration": 1.919,
+      "text": "Jony recently gave\nme one of the prototypes"
+    },
+    {
+      "start_time": 204.162,
+      "end_time": 205.83,
+      "duration": 1.668,
+      "text": "of the device for the\nfirst time to take home,"
+    },
+    {
+      "start_time": 205.83,
+      "end_time": 209,
+      "duration": 3.17,
+      "text": "and I've been able to live with it,\nand I think it is"
+    },
+    {
+      "start_time": 209,
+      "end_time": 212.837,
+      "duration": 3.837,
+      "text": "the coolest piece of technology\nthat the world will have ever seen."
+    },
+    {
+      "start_time": 213.129,
+      "end_time": 218.551,
+      "duration": 5.422,
+      "text": "The products that we're using to\ndeliver and connect us"
+    },
+    {
+      "start_time": 218.801,
+      "end_time": 224.14,
+      "duration": 5.339,
+      "text": "to unimaginable technology,\nthey’re decades old."
+    },
+    {
+      "start_time": 224.766,
+      "end_time": 225.433,
+      "duration": 0.667,
+      "text": "Yeah."
+    },
+    {
+      "start_time": 225.433,
+      "end_time": 228.93699999999998,
+      "duration": 3.504,
+      "text": "And so it's just common sense\nto at least think,"
+    },
+    {
+      "start_time": 229.145,
+      "end_time": 232.14800000000002,
+      "duration": 3.003,
+      "text": "surely there's something beyond\nthese legacy products."
+    },
+    {
+      "start_time": 232.398,
+      "end_time": 235.48499999999999,
+      "duration": 3.087,
+      "text": "We have, like, magic intelligence\nin the cloud."
+    },
+    {
+      "start_time": 235.818,
+      "end_time": 238.02900000000002,
+      "duration": 2.211,
+      "text": "If I wanted to ask\nChatGPT something right now"
+    },
+    {
+      "start_time": 239.53,
+      "end_time": 241.032,
+      "duration": 1.502,
+      "text": "about something we had talked about earlier,"
+    },
+    {
+      "start_time": 241.032,
+      "end_time": 242.82500000000002,
+      "duration": 1.793,
+      "text": "think about what would happen.\nI would like reached down."
+    },
+    {
+      "start_time": 242.825,
+      "end_time": 244.577,
+      "duration": 1.752,
+      "text": "I would get on my laptop, \nI'd open it up,"
+    },
+    {
+      "start_time": 244.577,
+      "end_time": 247.87199999999999,
+      "duration": 3.295,
+      "text": "I’d launch a web browser, I'd start typing,\nand I'd have to, like, explain that thing."
+    },
+    {
+      "start_time": 247.872,
+      "end_time": 250.875,
+      "duration": 3.003,
+      "text": "And I would hit enter, and I would wait,\nand I would get a response."
+    },
+    {
+      "start_time": 250.917,
+      "end_time": 253.92000000000002,
+      "duration": 3.003,
+      "text": "And that is at the limit of what\nthe current tool of a laptop can do."
+    },
+    {
+      "start_time": 254.504,
+      "end_time": 257.84,
+      "duration": 3.336,
+      "text": "But I think this technology deserves\nsomething much better."
+    },
+    {
+      "start_time": 260.301,
+      "end_time": 261.55199999999996,
+      "duration": 1.251,
+      "text": "So how did it all begin?"
+    },
+    {
+      "start_time": 261.552,
+      "end_time": 266.307,
+      "duration": 4.755,
+      "text": "So my son Charlie was the first, the\nfirst person in the family to use ChatGPT."
+    },
+    {
+      "start_time": 266.808,
+      "end_time": 270.186,
+      "duration": 3.378,
+      "text": "And he said, you've just got,\nyou've got to meet Sam."
+    },
+    {
+      "start_time": 270.353,
+      "end_time": 273.982,
+      "duration": 3.629,
+      "text": "I met Jony’s family\nrelatively quickly after meeting Jony,"
+    },
+    {
+      "start_time": 273.982,
+      "end_time": 276.985,
+      "duration": 3.003,
+      "text": "and it was sort of just like, \nit was an impossibly lovely family."
+    },
+    {
+      "start_time": 277.277,
+      "end_time": 280.57099999999997,
+      "duration": 3.294,
+      "text": "I was just thinking, what a privilege\nit is to really connect with somebody new."
+    },
+    {
+      "start_time": 280.571,
+      "end_time": 283.574,
+      "duration": 3.003,
+      "text": "And it's...\nit hasn't happened to me in a long time."
+    },
+    {
+      "start_time": 284.701,
+      "end_time": 288.62100000000004,
+      "duration": 3.92,
+      "text": "And the reason\nI think that it happened is"
+    },
+    {
+      "start_time": 288.621,
+      "end_time": 292.959,
+      "duration": 4.338,
+      "text": "we had both a very strong shared vision."
+    },
+    {
+      "start_time": 292.959,
+      "end_time": 294.877,
+      "duration": 1.918,
+      "text": "We maybe didn't know exactly\nwhere we were going to go,"
+    },
+    {
+      "start_time": 294.877,
+      "end_time": 298.548,
+      "duration": 3.671,
+      "text": "but like, the direction of  \nthe force vector felt clear."
+    },
+    {
+      "start_time": 299.215,
+      "end_time": 302.09299999999996,
+      "duration": 2.878,
+      "text": "And then this, like, deeply\nshared sense of values about what"
+    },
+    {
+      "start_time": 302.093,
+      "end_time": 305.93,
+      "duration": 3.837,
+      "text": "technology should be, when technology's\nbeen really good, when it's gone wrong."
+    },
+    {
+      "start_time": 306.014,
+      "end_time": 308.266,
+      "duration": 2.252,
+      "text": "I mean, that was, in a way,\none of the bases,"
+    },
+    {
+      "start_time": 308.266,
+      "end_time": 313.47900000000004,
+      "duration": 5.213,
+      "text": "I think, for one of the reasons\nSam and I clicked was despite"
+    },
+    {
+      "start_time": 314.605,
+      "end_time": 317.608,
+      "duration": 3.003,
+      "text": "our wonderfully different\njourneys to this point,"
+    },
+    {
+      "start_time": 317.859,
+      "end_time": 321.61199999999997,
+      "duration": 3.753,
+      "text": "our motivations and values\nare completely the same."
+    },
+    {
+      "start_time": 321.779,
+      "end_time": 323.031,
+      "duration": 1.252,
+      "text": "In my experience,"
+    },
+    {
+      "start_time": 323.031,
+      "end_time": 326.034,
+      "duration": 3.003,
+      "text": "if you're trying to have a sense of"
+    },
+    {
+      "start_time": 326.951,
+      "end_time": 329.954,
+      "duration": 3.003,
+      "text": "where you are going to end up,"
+    },
+    {
+      "start_time": 329.954,
+      "end_time": 333.207,
+      "duration": 3.253,
+      "text": "you shouldn't look at the technology."
+    },
+    {
+      "start_time": 333.207,
+      "end_time": 336.21,
+      "duration": 3.003,
+      "text": "You should look at the people\nwho are making the decisions,"
+    },
+    {
+      "start_time": 337.003,
+      "end_time": 340.757,
+      "duration": 3.754,
+      "text": "and you should look at what drives,\nmotivates,"
+    },
+    {
+      "start_time": 341.174,
+      "end_time": 342.383,
+      "duration": 1.209,
+      "text": "and look at values."
+    },
+    {
+      "start_time": 345.428,
+      "end_time": 346.512,
+      "duration": 1.084,
+      "text": "San Francisco has been like"
+    },
+    {
+      "start_time": 346.512,
+      "end_time": 349.682,
+      "duration": 3.17,
+      "text": "a mythical place in American history,"
+    },
+    {
+      "start_time": 349.682,
+      "end_time": 351.684,
+      "duration": 2.002,
+      "text": "and maybe in world history in some sense."
+    },
+    {
+      "start_time": 351.684,
+      "end_time": 355.021,
+      "duration": 3.337,
+      "text": "It is the city that I most associate\nwith the sort of"
+    },
+    {
+      "start_time": 355.688,
+      "end_time": 358.941,
+      "duration": 3.253,
+      "text": "leading edge of culture and technology."
+    },
+    {
+      "start_time": 358.941,
+      "end_time": 360.85999999999996,
+      "duration": 1.919,
+      "text": "This city has enabled"
+    },
+    {
+      "start_time": 360.86,
+      "end_time": 365.031,
+      "duration": 4.171,
+      "text": "and been the place\nof the creation of so much."
+    },
+    {
+      "start_time": 365.239,
+      "end_time": 368.534,
+      "duration": 3.295,
+      "text": "The fact that all of those things happened\nin the Bay Area and not anywhere else"
+    },
+    {
+      "start_time": 368.534,
+      "end_time": 372.497,
+      "duration": 3.963,
+      "text": "on this gigantic planet we live on,\nI think is really not an accident."
+    },
+    {
+      "start_time": 372.955,
+      "end_time": 377.293,
+      "duration": 4.338,
+      "text": "There's a lot of, like, weird quirky\ndetails about geography that I think"
+    },
+    {
+      "start_time": 377.293,
+      "end_time": 378.878,
+      "duration": 1.585,
+      "text": "matter, that the way the city is set up."
+    },
+    {
+      "start_time": 378.878,
+      "end_time": 380.83799999999997,
+      "duration": 1.96,
+      "text": "You know, I mean the absurd hills."
+    },
+    {
+      "start_time": 380.838,
+      "end_time": 384.84200000000004,
+      "duration": 4.004,
+      "text": "Why, why you would choose\nto actually put so much energy"
+    },
+    {
+      "start_time": 385.093,
+      "end_time": 389.389,
+      "duration": 4.296,
+      "text": "into building on this\ntopography is insane."
+    },
+    {
+      "start_time": 389.555,
+      "end_time": 392.642,
+      "duration": 3.087,
+      "text": "I think there's something\nabout San Francisco."
+    },
+    {
+      "start_time": 392.809,
+      "end_time": 395.144,
+      "duration": 2.335,
+      "text": "You don't get to pick and choose\nfreedom."
+    },
+    {
+      "start_time": 395.269,
+      "end_time": 396.312,
+      "duration": 1.043,
+      "text": "Either you have like"
+    },
+    {
+      "start_time": 396.312,
+      "end_time": 399.81600000000003,
+      "duration": 3.504,
+      "text": "you let creative freedom be expressed\nin all of its weirdness or you don't."
+    },
+    {
+      "start_time": 400.066,
+      "end_time": 403.152,
+      "duration": 3.086,
+      "text": "I feel I owe this city"
+    },
+    {
+      "start_time": 403.152,
+      "end_time": 406.239,
+      "duration": 3.087,
+      "text": "such an enormous debt of gratitude."
+    },
+    {
+      "start_time": 409.283,
+      "end_time": 410.618,
+      "duration": 1.335,
+      "text": "I want this to be democratized."
+    },
+    {
+      "start_time": 410.618,
+      "end_time": 411.49399999999997,
+      "duration": 0.876,
+      "text": "I want everybody to have it."
+    },
+    {
+      "start_time": 411.494,
+      "end_time": 413.83000000000004,
+      "duration": 2.336,
+      "text": "I don't want it to be the tiny percentage\nof the population"
+    },
+    {
+      "start_time": 413.83,
+      "end_time": 415.957,
+      "duration": 2.127,
+      "text": "that figures out how to use bad tools,\nand is really smart."
+    },
+    {
+      "start_time": 416.124,
+      "end_time": 418,
+      "duration": 1.876,
+      "text": "I want anybody to say, hey,\nI have this idea."
+    },
+    {
+      "start_time": 418,
+      "end_time": 418.501,
+      "duration": 0.501,
+      "text": "Make it happen."
+    },
+    {
+      "start_time": 419.085,
+      "end_time": 420.294,
+      "duration": 1.209,
+      "text": "The responsibility"
+    },
+    {
+      "start_time": 420.294,
+      "end_time": 424.966,
+      "duration": 4.672,
+      "text": "that Sam bears is— actually, \nis honestly beyond my comprehension."
+    },
+    {
+      "start_time": 424.966,
+      "end_time": 427.927,
+      "duration": 2.961,
+      "text": "I have a sense of some of it."
+    },
+    {
+      "start_time": 429.554,
+      "end_time": 432.68199999999996,
+      "duration": 3.128,
+      "text": "But I see him and I have seen him over"
+    },
+    {
+      "start_time": 432.682,
+      "end_time": 436.47700000000003,
+      "duration": 3.795,
+      "text": "the last two years\nshoulder that responsibility,"
+    },
+    {
+      "start_time": 437.061,
+      "end_time": 438.938,
+      "duration": 1.877,
+      "text": "I mean, late, late, late into the night."
+    },
+    {
+      "start_time": 438.938,
+      "end_time": 442.275,
+      "duration": 3.337,
+      "text": "But what really struck me is\nwhat he's worrying about"
+    },
+    {
+      "start_time": 442.275,
+      "end_time": 445.27799999999996,
+      "duration": 3.003,
+      "text": "is not himself and it's not his company."
+    },
+    {
+      "start_time": 445.987,
+      "end_time": 448.94800000000004,
+      "duration": 2.961,
+      "text": "What I see you worrying about are other people,"
+    },
+    {
+      "start_time": 448.948,
+      "end_time": 452.32599999999996,
+      "duration": 3.378,
+      "text": "are about customers,\nabout society, about culture."
+    },
+    {
+      "start_time": 453.161,
+      "end_time": 457.081,
+      "duration": 3.92,
+      "text": "And to me, that tells me everything\nI want to know about someone."
+    },
+    {
+      "start_time": 457.54,
+      "end_time": 460.37600000000003,
+      "duration": 2.836,
+      "text": "You talk to people who use our latest\nmodel and say,"
+    },
+    {
+      "start_time": 460.376,
+      "end_time": 464.21299999999997,
+      "duration": 3.837,
+      "text": "this is, like, genius-level in every field,\nand you just have to put in the work to"
+    },
+    {
+      "start_time": 464.213,
+      "end_time": 465.13100000000003,
+      "duration": 0.918,
+      "text": "like, pull it all together."
+    },
+    {
+      "start_time": 465.131,
+      "end_time": 468.46799999999996,
+      "duration": 3.337,
+      "text": "But if you have a hard problem,\nyou can have this, like, team of geniuses"
+    },
+    {
+      "start_time": 468.468,
+      "end_time": 471.471,
+      "duration": 3.003,
+      "text": "in all of their different disciplines,\nand they report,"
+    },
+    {
+      "start_time": 471.637,
+      "end_time": 474.974,
+      "duration": 3.337,
+      "text": "I'm two or three times more productive\nas a scientist than I was before."
+    },
+    {
+      "start_time": 475.266,
+      "end_time": 478.394,
+      "duration": 3.128,
+      "text": "I'm two or three times faster to find a cure\nfor cancer than I was before,"
+    },
+    {
+      "start_time": 478.728,
+      "end_time": 481.314,
+      "duration": 2.586,
+      "text": "because I have this incredible\nexternal brain."
+    },
+    {
+      "start_time": 481.439,
+      "end_time": 483.31600000000003,
+      "duration": 1.877,
+      "text": "That just didn't exist six months ago."
+    },
+    {
+      "start_time": 483.316,
+      "end_time": 487.27799999999996,
+      "duration": 3.962,
+      "text": "I think this will be one of these\nmoments of just an absolute"
+    },
+    {
+      "start_time": 488.571,
+      "end_time": 489.65500000000003,
+      "duration": 1.084,
+      "text": "embarrassment of riches"
+    },
+    {
+      "start_time": 489.655,
+      "end_time": 492.49199999999996,
+      "duration": 2.837,
+      "text": "of what people go create\nfor collective society."
+    },
+    {
+      "start_time": 492.492,
+      "end_time": 498.456,
+      "duration": 5.964,
+      "text": "I am absolutely certain\nthat we are literally on the brink"
+    },
+    {
+      "start_time": 498.456,
+      "end_time": 502.293,
+      "duration": 3.837,
+      "text": "of a new generation of technology"
+    },
+    {
+      "start_time": 502.627,
+      "end_time": 506.047,
+      "duration": 3.42,
+      "text": "that can make us our better selves."
+    }
+  ]
+}
