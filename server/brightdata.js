@@ -2,6 +2,7 @@ const axios = require("axios");
 const fs = require('fs');
 const mongoose = require('mongoose');
 const env = require('dotenv');
+const connectDB = require('./db');
 
 env.config();
 
@@ -34,19 +35,7 @@ const videoSchema = new mongoose.Schema({
 // Create the Video model
 const Video = mongoose.model('Brightdata_Output', videoSchema);
 
-// Connect to MongoDB
-const mongoURL = process.env.MONGODB_URL;
-mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => {
-    console.log('✅ Successfully connected to MongoDB!');
-})
-.catch((error) => {
-    console.error('❌ Error connecting to MongoDB:', error);
-});
-
+// Connect to MongoDB using the shared connection
 const headers = {
     "Authorization": "Bearer 644ab8d2-a4d5-4a80-b653-52e27950a08a",
     "Content-Type": "application/json",

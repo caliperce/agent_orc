@@ -4,10 +4,10 @@ const env = require('dotenv');
 const mongoose = require('mongoose');
 const axios = require('axios');  // Add axios for making HTTP requests
 const { startProcess, Video } = require('./brightdata');  // Import both startProcess and Video model
+const connectDB = require('./db');
 
 env.config();
 
-const mongoURL = process.env.MONGODB_URL;
 const WEBHOOK_URL = 'https://run.relay.app/api/v1/playbook/cmay1ijw904j50okobj1lehh4/webhook/cmb0fo5mm000i3b6uea20x6wq';
 
 // Function to send webhook
@@ -43,6 +43,9 @@ const Question = mongoose.model('Question', schema);
 
 const app = express();
 app.use(bodyParser.json());
+
+// Connect to MongoDB
+connectDB().catch(console.error);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -141,23 +144,12 @@ app.post("/hello", async (req, res) => {
 });
 
 // For local development
-  mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    connectTimeoutMS: 30000,
-    socketTimeoutMS: 30000
-  })
-  .then(() => {
-    console.log('Successfully connected to MongoDB!');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
-
+if (process.env.NODE_ENV !== 'production') {
   app.listen(process.env.PORT || 8080, () => {
     console.log("Server is running on port 8080");
     console.log("http://localhost:8080");
   });
+}
 
 // Export the Express API
 module.exports = app;

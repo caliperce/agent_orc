@@ -1,9 +1,9 @@
 {
   "name": "agent-orc",
   "version": "1.0.0",
-  "main": "server/app.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node server/app.js"
+    "start": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
