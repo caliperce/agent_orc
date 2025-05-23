@@ -4,7 +4,6 @@ const env = require('dotenv');
 const mongoose = require('mongoose');
 const axios = require('axios');  // Add axios for making HTTP requests
 const { startProcess, Video } = require('./brightdata');  // Import both startProcess and Video model
-const connectDB = require('./db');
 
 env.config();
 
@@ -45,7 +44,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-connectDB().catch(console.error);
+// connectDB().catch(console.error);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

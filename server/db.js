@@ -4,9 +4,7 @@ const env = require('dotenv');
 env.config();
 
 const MONGODB_URI = process.env.MONGODB_URL;
-console.log("mongooooo")
-
-console.log(MONGODB_URI);
+console.log("mongooooo startttting")
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URL environment variable');
@@ -30,10 +28,13 @@ async function connectDB() {
       connectTimeoutMS: 30000,
       socketTimeoutMS: 30000,
     };
-
+    console.log("before conneciton")
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       console.log('✅ Successfully connected to MongoDB!');
       return mongoose;
+    }).catch((error) => {
+      console.error('❌ Error connecting to MongoDB:', error);
+      throw error;
     });
   }
 
