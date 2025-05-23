@@ -4,6 +4,9 @@ const env = require('dotenv');
 env.config();
 
 const MONGODB_URI = process.env.MONGODB_URL;
+console.log("mongooooo")
+
+console.log(MONGODB_URI);
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URL environment variable');

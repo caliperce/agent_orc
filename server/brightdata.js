@@ -42,6 +42,8 @@ const headers = {
 };
 
 console.log("🚀 Starting YouTube data collection process...");
+console.log("mongooooo", process.env.MONGODB_URL)
+
 
 // Function to check status
 const checkStatus = async (snapshotId) => {
