@@ -28,7 +28,7 @@ async function connectDB() {
       connectTimeoutMS: 30000,
       socketTimeoutMS: 30000,
     };
-    console.log("before conneciton")
+    console.log("before conneciton",MONGODB_URI,opts)
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       console.log('✅ Successfully connected to MongoDBbb!');
       return mongoose;
