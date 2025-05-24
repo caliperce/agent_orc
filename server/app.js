@@ -200,16 +200,23 @@ app.post("/test-single-video", async (req, res) => {
             details: error.response ? error.response.data : null
         });
     }
+
 });
 
+
+
 // For local development
-if (process.env.NODE_ENV !== 'production') {
-  const port = process.env.PORT || 8080;
-  app.listen(port,'0.0.0.0',() => {
-    console.log("Server is running on port", port);
-    console.log("http://localhost:8080");
-  });
-}
+
+console.log('Starting server...');
+// Listen on the port provided by Heroku or default to 8080
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log("Server is running on port", port);
+  // Only show localhost URL in development
+  if (process.env.NODE_ENV !== 'production') {
+    console.log("http://localhost:" + port);
+  }
+});
 
 // Export the Express API
 module.exports = app;
