@@ -2,29 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const env = require('dotenv');
 const mongoose = require('mongoose');
-const axios = require('axios');  // Add axios for making HTTP requests
-const { startProcess, Video } = require('./brightdata');  // Import both startProcess and Video model
+const { startProcess,Video } = require('./brightdata');
+const { processAndSendWebhook, sendWebhook } = require('./webhook');
+const connectDB = require('./db');
+connectDB().then(console.log('Connection from app.js')).catch(console.error)
 
 env.config();
-
-const WEBHOOK_URL = 'https://run.relay.app/api/v1/playbook/cmay1ijw904j50okobj1lehh4/webhook/cmb0fo5mm000i3b6uea20x6wq';
-
-// Function to send webhook
-const sendWebhook = async (data) => {
-    try {
-        console.log("🚀 Sending webhook with data...");
-        const response = await axios.post(WEBHOOK_URL, data);
-        console.log("✅ Webhook sent successfully:", response.status);
-        return response.data;
-    } catch (error) {
-        console.error("❌ Error sending webhook:", error.message);
-        if (error.response) {
-            console.error("Webhook response data:", error.response.data);
-            console.error("Webhook response status:", error.response.status);
-        }
-        throw error;
-    }
-};
 
 // Question schema
 const schema = new mongoose.Schema({
@@ -119,8 +102,8 @@ app.post("/hello", async (req, res) => {
 
         // Send webhook with the video data
         try {
-          await sendWebhook(videoData);
-          console.log("🎉 Webhook sent successfully after data save!");
+          await processAndSendWebhook(questionDoc._id);
+          console.log("questionId sent to webhook", questionDoc._id);
         } catch (webhookError) {
           console.error("❌ Failed to send webhook:", webhookError.message);
           // Don't throw the error here, as the data is already saved
@@ -140,6 +123,83 @@ app.post("/hello", async (req, res) => {
       error: error.message
     });
   }
+});
+
+app.post("/test-webhook", async (req, res) => {
+    try {
+        const questionId = req.body.questionId;
+        if (!questionId) {
+            return res.status(400).json({ error: "Please provide a questionId" });
+        }
+
+        console.log("🧪 Testing webhook for questionId:", questionId);
+        const result = await processAndSendWebhook(questionId);
+        
+        res.json({
+            success: true,
+            message: "Webhook test completed",
+            data: result
+        });
+    } catch (error) {
+        console.error("❌ Test webhook error:", error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+app.post("/test-single-video", async (req, res) => {
+    try {
+        // Get the first video from Brightdata_Output collection
+        const video = await Video.findOne({});
+        
+        if (!video) {
+            return res.status(404).json({ 
+                success: false, 
+                error: "No videos found in the database" 
+            });
+        }
+
+        console.log("\n🧪 Test Video Details:");
+        console.log("Title:", video.title);
+        console.log("URL:", video.url);
+        console.log("Channel URL:", video.channelUrl);
+        
+        // Send just this single video through the webhook directly
+        const result = await sendWebhook([video]);
+        
+        // Check if the result contains an error
+        if (result && result.error) {
+            return res.status(500).json({
+                success: false,
+                message: "Webhook test failed",
+                error: result.message,
+                details: result.details
+            });
+        }
+        
+        res.json({
+            success: true,
+            message: "✅ Webhook test successful! Data was sent and accepted by the webhook server.",
+            details: {
+                status: "Accepted (202)",
+                timestamp: result.timestamp,
+                video: {
+                    title: video.title,
+                    url: video.url,
+                    channelUrl: video.channelUrl
+                }
+            }
+        });
+    } catch (error) {
+        console.error("\n❌ Test webhook error:", error);
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            details: error.response ? error.response.data : null
+        });
+    }
 });
 
 // For local development

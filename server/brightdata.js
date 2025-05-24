@@ -2,38 +2,43 @@ const axios = require("axios");
 const fs = require('fs');
 const mongoose = require('mongoose');
 const env = require('dotenv');
-const connectDB = require('./db');
+const connectDB = require('../server/db');
+const { processAndSendWebhook } = require("./webhook");
+const Video = require('./videoModel');  // This now imports the model directly
+const { time } = require("console");
+console.log("gonna connect to db")
+connectDB().catch(console.error);
 
 env.config();
 
-// Define the Video schema
-const videoSchema = new mongoose.Schema({
-    url: { type: String, required: true },
-    title: { type: String, required: true },
-    channelUrl: { type: String, required: true },
-    transcript: [{
-        start_time: Number,
-        end_time: Number,
-        duration: Number,
-        text: String
-    }],
-    transcript_language: [{
-        language: String,
-        auto_translate: Boolean
-    }],
-    timestamp: { type: String },
-    chapters: [{
-        title: String,
-        time_stamp: String,
-        image: String
-    }],
-    description: { type: String },
-    date: { type: Date, default: Date.now },
-    questionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' }
-});
+// // Define the Video schema
+// const videoSchema = new mongoose.Schema({
+//     url: { type: String, required: true },
+//     title: { type: String, required: true },
+//     channelUrl: { type: String, required: true },
+//     transcript: [{
+//         start_time: Number,
+//         end_time: Number,
+//         duration: Number,
+//         text: String
+//     }],
+//     transcript_language: [{
+//         language: String,
+//         auto_translate: Boolean
+//     }],
+//     timestamp: { type: String },
+//     chapters: [{
+//         title: String,
+//         time_stamp: String,
+//         image: String
+//     }],
+//     description: { type: String },
+//     createdAt: { type: Date, default: Date.now },
+//     questionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' }
+// });
 
 // Create the Video model
-const Video = mongoose.model('Brightdata_Output', videoSchema);
+// const Video = mongoose.model('Brightdata_Output', videoSchema);
 
 // Connect to MongoDB using the shared connection
 const headers = {
@@ -85,7 +90,7 @@ const checkStatus = async (snapshotId) => {
                     transcript_language: singleObject.transcript_language || [],
                     timestamp: singleObject.timestamp || null,
                     chapters: singleObject.chapters || null,
-                    description: singleObject.description || ''
+                    description: singleObject.description || '',
                 }];
 
                 // Only save to MongoDB if status is 200 and we have valid data
@@ -93,7 +98,11 @@ const checkStatus = async (snapshotId) => {
                     console.log("💾 Saving data to MongoDB...");
                     for (const videoData of extractedData) {
                         try {
-                            const video = new Video(videoData);
+                            // Add the questionId to the video data before saving
+                            const video = new Video({
+                                ...videoData,
+                                questionId: questionDoc._id // This will reference the question document
+                            });
                             await video.save();
                             console.log(`✅ Saved data: ${videoData.title}`);
                         } catch (error) {
@@ -255,6 +264,8 @@ const startProcess = async (keyword) => {
 
         console.log("📸 Snapshot created successfully");
         console.log("📸 Snapshot ID:", response.data.snapshot_id);
+
+
         
         if (!response.data.snapshot_id) {
             console.error("❌ No snapshot ID in response");
@@ -273,5 +284,6 @@ const startProcess = async (keyword) => {
     }
 };
 
-// Export both startProcess and Video model
+
+// Export both startProcess and Video
 module.exports = { startProcess, Video };
