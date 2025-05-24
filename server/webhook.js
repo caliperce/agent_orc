@@ -4,7 +4,7 @@ const Video = require('./videoModel');
 
 
 // Webhook URL
-const WEBHOOK_URL = 'https://run.relay.app/api/v1/playbook/cmb0q8h9d0u1h0okpbc9nhn8i/trigger/dxnt1ssuARAPq9Xw2679rw';
+const WEBHOOK_URL = 'https://run.relay.app/api/v1/playbook/cmay1ijw904j50okobj1lehh4/webhook/cmb1xfg14006m3b6u5vlln7va';
 
 // Function to send webhook
 const sendWebhook = async (data) => {
