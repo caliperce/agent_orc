@@ -112,10 +112,13 @@ const checkStatus = async (snapshotId) => {
                     console.log("🎉 All videos saved to MongoDB!");
                     return extractedData;
                 } else {
-                    // If response status is not 200 or data is missing required fields,
-                    // return null to stop the polling
-                    console.log("❌ Invalid or incomplete data received");
-                    return null;
+                    console.log("⏳ Data not ready yet, waiting...");
+                    return new Promise((resolve) => {
+                        setTimeout(async () => {
+                            const result = await checkStatus(snapshotId);
+                            resolve(result);
+                        }, 10000);
+                    });
                 }
             }
         } catch (singleParseError) {
