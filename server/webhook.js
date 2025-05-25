@@ -1,7 +1,9 @@
 const axios = require('axios');
 const connectDB = require('../server/db');
 const Video = require('./videoModel');
-
+const Question = require('./questionModel');
+const { writeToGoogleDocs } = require('./googleDocs');
+connectDB().catch(console.error)
 
 // Webhook URL
 const WEBHOOK_URL = 'https://run.relay.app/api/v1/playbook/cmb0q8h9d0u1h0okpbc9nhn8i/trigger/dxnt1ssuARAPq9Xw2679rw';
@@ -11,18 +13,16 @@ const sendWebhook = async (data) => {
     try {
         console.log("\n🚀 Starting trigger request...");
         
-        // Make videos an array of video objects
-        const videoData = Array.isArray(data) ? data : [data];
-        
         // Format the data for trigger endpoint
         const triggerData = {
             runId: Date.now().toString(),
-            data: JSON.stringify(videoData)  // Convert the array to a string
+            data: JSON.stringify({
+                message: "Data has been written to Google Docs",
+                question : data.question,
+            }),
+            documentId: data.documentId,
         };
 
-
-        console.log("actual data", triggerData.data)
-        
         const response = await axios.post(WEBHOOK_URL, triggerData, {
             headers: {
                 'Content-Type': 'application/json',
@@ -31,6 +31,7 @@ const sendWebhook = async (data) => {
         });
         
         console.log("\n✅ Trigger response received:");
+        console.log("Triggered data", triggerData)
         console.log("Status:", response.status);
         console.log("Headers:", response.headers);
         
@@ -104,11 +105,22 @@ const sendWebhook = async (data) => {
 // Function to fetch data from MongoDB and send webhook
 const processAndSendWebhook = async (questionId) => {
     try {
-        console.log("\n🔍 Looking for videos with questionId:", questionId);
+        console.log("\n🔍 Looking for question and videos with questionId:", questionId);
         
-        // Find all videos associated with the question
-        const videos = await Video.find({ questionId: questionId });
+        // Find the question and all videos associated with it
+        const [question, videos] = await Promise.all([
+            Question.findById(questionId),
+            Video.find({ questionId: questionId })
+        ]);
         
+        if (!question) {
+            console.log("❌ No question found for ID:", questionId);
+            return {
+                error: true,
+                message: "No question found for the given ID"
+            };
+        }
+
         if (!videos || videos.length === 0) {
             console.log("❌ No videos found for question ID:", questionId);
             return {
@@ -117,12 +129,25 @@ const processAndSendWebhook = async (questionId) => {
             };
         }
 
-        console.log(`\n📊 Found ${videos.length} videos to process`);
-        console.log("📝 First video title:", videos[0].title);
-        console.log("\n🎉 Trigger process has started ");
-        const result = await sendWebhook(videos)
-        console.log("result", result)
-        return result
+        console.log(`\n📊 Found question and ${videos.length} videos to process`);
+        
+        // First, write to Google Docs
+        console.log("\n📝 Writing data to Google Docs...");
+        const { documentId, documentUrl } = await writeToGoogleDocs(question, videos);
+        console.log("✅ Data written to Google Docs with ID:", documentId);
+        console.log("✅ Document URL:", documentUrl);
+
+        // Then send webhook with document ID and URL
+        console.log("\n🎉 Sending webhook trigger...");
+        const result = await sendWebhook({ documentId, documentUrl });
+        console.log("✅ Webhook sent successfully");
+        
+        return {
+            success: true,
+            documentId,
+            documentUrl,
+           webhookResult: result
+        };
     } catch (error) {
         console.error("\n❌ Error in processAndSendWebhook:", error.message);
         return {
@@ -133,8 +158,7 @@ const processAndSendWebhook = async (questionId) => {
     }
 };
 
-
-
+processAndSendWebhook("68319a2e3e14de958368f16c")
 
 module.exports = {
     sendWebhook,

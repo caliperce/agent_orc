@@ -4,27 +4,29 @@ const env = require('dotenv');
 const mongoose = require('mongoose');
 const { startProcess,Video } = require('./brightdata');
 const { processAndSendWebhook, sendWebhook } = require('./webhook');
+const Question = require('./questionModel');
 const connectDB = require('./db');
 connectDB().then(console.log('Connection from app.js')).catch(console.error)
 
 env.config();
 
-// Question schema
-const schema = new mongoose.Schema({
-  question: String,
-  date: { type: Date, default: Date.now },
-  status: { 
-    type: String, 
-    enum: ['pending', 'inprocess', 'completed'],
-    default: 'pending'
-  },
-  videoId: { type: mongoose.Schema.Types.ObjectId, ref: 'Brightdata_Output' }
-});
+// // Question schema
+// const schema = new mongoose.Schema({
+//   question: String,
+//   date: { type: Date, default: Date.now },
+//   status: { 
+//     type: String, 
+//     enum: ['pending', 'inprocess', 'completed'],
+//     default: 'pending'
+//   },
+//   videoId: { type: mongoose.Schema.Types.ObjectId, ref: 'Brightdata_Output' }
+// });
 
-const Question = mongoose.model('Question', schema);
+// const Question = mongoose.model('Question', schema);
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '150mb'})); // Increased JSON size limit to 100mb
+app.use(bodyParser.urlencoded({limit: '150mb', extended: true})); // Also increase URL-encoded payload limit
 
 // Connect to MongoDB
 // connectDB().catch(console.error);
