@@ -1,4 +1,4 @@
-# 🎥 YouTube Video Search & Analysis System
+# 🎥 YouTube research agent
 
 A powerful system that searches YouTube videos, analyzes their content, and organizes results in Google Docs. Built with Node.js, Express, and MongoDB.
 
