@@ -6,6 +6,7 @@ const { startProcess,Video } = require('./brightdata');
 const { processAndSendWebhook, sendWebhook } = require('./webhook');
 const Question = require('./questionModel');
 const connectDB = require('./db');
+const { fetchAndPollResultsForUrl} = require('./fetch_transcripts/yt-trans');
 connectDB().then(console.log('Connection from app.js')).catch(console.error)
 
 env.config();
@@ -125,6 +126,27 @@ app.post("/hello", async (req, res) => {
       error: error.message
     });
   }
+});
+
+app.post("/fetch-transcripts", async (req, res) => {
+  const { url, question } = req.body;
+  
+  
+  // Check if both url and question are provided
+  if (!url || !question) {
+    return res.status(400).json({
+      success: false,
+      error: "Please provide both url and question"
+    });
+  }
+
+  const data = await fetchAndPollResultsForUrl(url,question);
+  res.json({
+    success: true,
+    url: url,
+    question: question,
+    data: data
+  });
 });
 
 app.post("/test-webhook", async (req, res) => {
