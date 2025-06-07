@@ -109,3 +109,4 @@ module.exports = {
     fetchAndPollResultsForUrl
 }
 // Usage: just call this function with any YouTube URL
+fetchAndPollResultsForUrl("https://youtu.be/MnBZlEQ14fY?si=3pyWs5I0JYGjRYBa","what happened here?");

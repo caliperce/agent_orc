@@ -6,7 +6,7 @@ const { startProcess,Video } = require('./brightdata');
 const { processAndSendWebhook, sendWebhook } = require('./webhook');
 const Question = require('./questionModel');
 const connectDB = require('./db');
-const { fetchAndPollResultsForUrl} = require('./fetch_transcripts/yt-trans');
+const { getTranscript} = require('./fetch_transcripts/youtube-trans');
 connectDB().then(console.log('Connection from app.js')).catch(console.error)
 
 env.config();
@@ -140,7 +140,7 @@ app.post("/fetch-transcripts", async (req, res) => {
     });
   }
 
-  const data = await fetchAndPollResultsForUrl(url,question);
+  const data = await getTranscript(url,question);
   res.json({
     success: true,
     url: url,
